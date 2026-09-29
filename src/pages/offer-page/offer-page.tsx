@@ -29,7 +29,6 @@ export default function OfferPage(): JSX.Element {
           </div>
         </div>
       </header>
-
       <main className="page__main page__main--offer">
         <section className="offer">
           <div className="offer__gallery-container container">
@@ -184,28 +183,24 @@ export default function OfferPage(): JSX.Element {
                         <use xlinkHref="#icon-star"></use>
                       </svg>
                     </label>
-
                     <input className="form__rating-input visually-hidden" name="rating" value="4" id="4-stars" type="radio" />
                     <label htmlFor="4-stars" className="reviews__rating-label form__rating-label" title="good">
                       <svg className="form__star-image" width="37" height="33">
                         <use xlinkHref="#icon-star"></use>
                       </svg>
                     </label>
-
                     <input className="form__rating-input visually-hidden" name="rating" value="3" id="3-stars" type="radio" />
                     <label htmlFor="3-stars" className="reviews__rating-label form__rating-label" title="not bad">
                       <svg className="form__star-image" width="37" height="33">
                         <use xlinkHref="#icon-star"></use>
                       </svg>
                     </label>
-
                     <input className="form__rating-input visually-hidden" name="rating" value="2" id="2-stars" type="radio" />
                     <label htmlFor="2-stars" className="reviews__rating-label form__rating-label" title="badly">
                       <svg className="form__star-image" width="37" height="33">
                         <use xlinkHref="#icon-star"></use>
                       </svg>
                     </label>
-
                     <input className="form__rating-input visually-hidden" name="rating" value="1" id="1-star" type="radio" />
                     <label htmlFor="1-star" className="reviews__rating-label form__rating-label" title="terribly">
                       <svg className="form__star-image" width="37" height="33">
@@ -261,7 +256,6 @@ export default function OfferPage(): JSX.Element {
                   <p className="place-card__type">Room</p>
                 </div>
               </article>
-
               <article className="near-places__card place-card">
                 <div className="near-places__image-wrapper place-card__image-wrapper">
                   <a href="#">
@@ -293,7 +287,6 @@ export default function OfferPage(): JSX.Element {
                   <p className="place-card__type">Apartment</p>
                 </div>
               </article>
-
               <article className="near-places__card place-card">
                 <div className="place-card__mark">
                   <span>Premium</span>

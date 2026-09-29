@@ -1,4 +1,4 @@
-import PlaceCard from '../../components/Card/PlaceCard';
+import PlaceCard from '../../components/place-card/place-card';
 
 type MainProps = {
   placesCount: number;
@@ -35,7 +35,6 @@ export default function MainPage({placesCount}: MainProps): JSX.Element {
           </div>
         </div>
       </header>
-
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
