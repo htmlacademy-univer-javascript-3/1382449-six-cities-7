@@ -1,4 +1,4 @@
-export default function OfferPage(): JSX.Element {
+export default function OfferPage() {
   return (
     <div className="page">
       <header className="header">
