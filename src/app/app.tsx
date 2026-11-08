@@ -6,12 +6,14 @@ import OfferPage from '../pages/offer-page/offer-page';
 import NotFoundPage from '../pages/not-found-page/not-found-page';
 import PrivateRoute from '../components/privtate-route';
 import { Offer } from '../mocks/offers';
+import { Review } from '../mocks/reviews';
 
 type AppProps = {
   offers: Offer[];
+  reviews: Review[];
 };
 
-export default function App({ offers }: AppProps): JSX.Element {
+export default function App({ offers, reviews }: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
@@ -24,7 +26,7 @@ export default function App({ offers }: AppProps): JSX.Element {
             </PrivateRoute>
           }
           />
-          <Route path='/offer/:id' element={<OfferPage offers={offers} />} />
+          <Route path='/offer/:id' element={<OfferPage offers={offers} reviews={reviews} />} />
           <Route path='*' element={<NotFoundPage />} />
         </Route>
       </Routes>
