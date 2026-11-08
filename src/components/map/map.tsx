@@ -9,6 +9,7 @@ type MapProps = {
   latitude: number;
   longitude: number;
   zoom: number;
+  variant?: 'cities' | 'offer';
 };
 
 const defaultIcon = icon({
@@ -23,7 +24,7 @@ const activeIcon = icon({
   iconAnchor: [13, 39],
 });
 
-export default function Map({ offers, activeOfferId, latitude, longitude, zoom }: MapProps): JSX.Element {
+export default function Map({ offers, activeOfferId, latitude, longitude, zoom, variant = 'cities' }: MapProps): JSX.Element {
   const mapElement = useRef<HTMLElement | null>(null);
   const map = useRef<LeafletMap | null>(null);
 
@@ -68,5 +69,5 @@ export default function Map({ offers, activeOfferId, latitude, longitude, zoom }
     };
   }, [offers, activeOfferId, latitude, longitude, zoom]);
 
-  return <section className="cities__map map" ref={mapElement} />;
+  return <section className={`${variant}__map map`} ref={mapElement} />;
 }
