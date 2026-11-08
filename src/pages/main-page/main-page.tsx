@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import OffersList from '../../components/offers-list/offers-list';
+import Map from '../../components/map/map';
 import { Offer } from '../../mocks/offers';
 
 type MainProps = {
@@ -7,6 +9,9 @@ type MainProps = {
 };
 
 export default function MainPage({offers}: MainProps) {
+  const [activeOfferId, setActiveOfferId] = useState<string | null>(null);
+  const amsterdamOffers = offers.filter((offer) => offer.city === 'Amsterdam');
+
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -79,7 +84,7 @@ export default function MainPage({offers}: MainProps) {
           <div className="cities__places-container container">
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">{offers.length} places to stay in Amsterdam</b>
+              <b className="places__found">{amsterdamOffers.length} places to stay in Amsterdam</b>
               <form className="places__sorting" action="#" method="get">
                 <span className="places__sorting-caption">Sort by</span>
                 <span className="places__sorting-type" tabIndex={0}>
@@ -95,10 +100,10 @@ export default function MainPage({offers}: MainProps) {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <OffersList offers={offers} />
+              <OffersList offers={amsterdamOffers} onActiveOfferChange={setActiveOfferId} />
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <Map offers={amsterdamOffers} activeOfferId={activeOfferId} latitude={52.370216} longitude={4.895168} zoom={12} />
             </div>
           </div>
         </div>
